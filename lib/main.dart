@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart'; // <-- Import Riverpod!
 import 'package:go_router/go_router.dart';
 import 'core/routes/app_router.dart';
 import 'core/theme/app_theme.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(const MyApp());
+  runApp(const ProviderScope(child: MyApp())); // <-- Wrap your app here!
 }
 
 class MyApp extends StatelessWidget {
@@ -13,14 +14,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      title: 'RequestGo',
+      title: 'VoiceCRM',
       routerConfig: appRouter, // Your GoRouter instance!
       theme: AppTheme.light,
       darkTheme: AppTheme.dark,
-      themeMode: ThemeMode.system, // Or store/load from preferences
+      themeMode: ThemeMode.system,
       debugShowCheckedModeBanner: false,
       localizationsDelegates: const [
-        // All your localizations...
+        // Your localization delegates here...
       ],
     );
   }

@@ -4,7 +4,7 @@ import '../../core/theme/app_colors.dart';
 
 class CustomBottomNav extends StatelessWidget {
   final int currentIndex;
-  final Function(int) onItemTapped;
+  final ValueChanged<int> onItemTapped;
 
   const CustomBottomNav({
     super.key,
@@ -19,8 +19,8 @@ class CustomBottomNav extends StatelessWidget {
       onTap: onItemTapped,
       type: BottomNavigationBarType.fixed,
       selectedItemColor: AppColors.primaryColor,
-      unselectedItemColor: AppColors.textSecondary,
-      backgroundColor: AppColors.surfaceColor,
+      unselectedItemColor: AppColors.textSecondary ?? Colors.grey,
+      backgroundColor: AppColors.surfaceColor ?? Colors.white,
       selectedLabelStyle: AppTypography.bodyLarge.copyWith(
         fontSize: 12,
         fontWeight: FontWeight.bold,
@@ -28,38 +28,33 @@ class CustomBottomNav extends StatelessWidget {
       ),
       unselectedLabelStyle: AppTypography.bodyLarge.copyWith(
         fontSize: 12,
-        color: AppColors.textSecondary,
+        color: AppColors.textSecondary ?? Colors.grey,
       ),
       items: [
         _buildNavItem(
-          icon: Icons.article,
+          icon: Icons.contacts,
           index: 0,
-          label: 'Posts',
+          label: 'Contacts',
         ),
         _buildNavItem(
-          icon: Icons.manage_search_sharp,
+          icon: Icons.dialpad,
           index: 1,
-          label: 'SEO blog',
+          label: 'Dialer',
         ),
         _buildNavItem(
-          icon: Icons.link,
+          icon: Icons.phone_in_talk,
           index: 2,
-          label: 'Integration',
+          label: 'Call',
         ),
         _buildNavItem(
-          icon: Icons.attach_money,
+          icon: Icons.mic,
           index: 3,
-          label: 'Expense',
+          label: 'Recordings',
         ),
         _buildNavItem(
-          icon: Icons.history,
+          icon: Icons.person,
           index: 4,
-          label: 'Test',
-        ),
-        _buildNavItem(
-          icon: Icons.more_horiz,
-          index: 5,
-          label: 'Login & More',
+          label: 'Profile',
         ),
       ],
     );
@@ -77,14 +72,14 @@ class CustomBottomNav extends StatelessWidget {
         padding: const EdgeInsets.all(6),
         decoration: isSelected
             ? BoxDecoration(
-                color: AppColors.primaryColor.withOpacity(0.1),
+                color: AppColors.primaryColor.withOpacity(0.12),
                 shape: BoxShape.circle,
               )
             : null,
         child: Icon(
           icon,
-          size: 20,
-          color: isSelected ? AppColors.primaryColor : AppColors.textSecondary,
+          size: 22,
+          color: isSelected ? AppColors.primaryColor : AppColors.textSecondary ?? Colors.grey,
         ),
       ),
       label: label,

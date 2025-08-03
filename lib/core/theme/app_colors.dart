@@ -35,4 +35,8 @@ class AppColors {
   static const Color info = Color(0xFF039BE5);
 
   static const Color customColor = Color(0xFF009688);
+
+   static const Color accentColor = Color(0xFF0D47A1);
+  static const Color recordingColor = Colors.redAccent;
+  static const Color scaffoldBg = Color(0xFFF4F6FB);
 }

@@ -1,16 +1,23 @@
 import 'package:flutter/material.dart';
 
+import '../../modules/contacts/contacts_screen.dart';
+import '../../modules/dialer/dialer_screen.dart';
+import '../../modules/call/call_screen.dart';
+import '../../modules/recordings/recordings_screen.dart';
+
 class PageService {
   static List<Widget> getPages() {
     return [
-      PlaceholderScreen(label: 'Home'),
-      PlaceholderScreen(label: 'Search'),
-      PlaceholderScreen(label: 'Profile'),
+      ContactsScreen(),
+      DialerScreen(),
+      CallScreen(contactName: 'Alice', phone: '+91 98765 43210'), // Replace with dynamic data when wiring up state
+      RecordingsScreen(),
+      PlaceholderScreen(label: 'Profile'), // Replace with ProfileScreen() when you create it
     ];
   }
 }
 
-// Simple placeholder screen you can use anywhere
+// Simple placeholder screen for unimplemented pages
 class PlaceholderScreen extends StatelessWidget {
   final String label;
   const PlaceholderScreen({super.key, required this.label});
