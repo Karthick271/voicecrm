@@ -65,6 +65,8 @@ class AppTypography {
     color: Colors.black87,
   );
 
+  static var body;
+
  
  
 }

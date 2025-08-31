@@ -37,23 +37,23 @@ class CustomBottomNav extends StatelessWidget {
           label: 'Contacts',
         ),
         _buildNavItem(
-          icon: Icons.dialpad,
+          icon: Icons.history,
           index: 1,
-          label: 'Dialer',
+          label: 'Call History',
         ),
-        _buildNavItem(
-          icon: Icons.phone_in_talk,
-          index: 2,
-          label: 'Call',
-        ),
-        _buildNavItem(
-          icon: Icons.mic,
-          index: 3,
-          label: 'Recordings',
-        ),
+        // _buildNavItem(
+        //   icon: Icons.phone_in_talk,
+        //   index: 2,
+        //   label: 'Call',
+        // ),
+        // _buildNavItem(
+        //   icon: Icons.mic,
+        //   index: 3,
+        //   label: 'Recordings',
+        // ),
         _buildNavItem(
           icon: Icons.person,
-          index: 4,
+          index: 2,
           label: 'Profile',
         ),
       ],

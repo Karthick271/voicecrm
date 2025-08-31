@@ -6,7 +6,7 @@ class SplashMessage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      'Welcome to My App',
+      'Simple and Smart.',
       style: Theme.of(context).textTheme.titleLarge,
     );
   }
