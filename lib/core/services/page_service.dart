@@ -8,10 +8,10 @@ import '../../modules/recordings/recordings_screen.dart';
 class PageService {
   static List<Widget> getPages() {
     return [
-      ContactsScreen(),
-      DialerScreen(),
-      CallScreen(contactName: 'Alice', phone: '+91 98765 43210'), // Replace with dynamic data when wiring up state
-      RecordingsScreen(),
+      // ContactsScreen(),
+      // DialerScreen(),
+      // CallScreen(contactName: 'Alice', phone: '+91 98765 43210'), // Replace with dynamic data when wiring up state
+      // RecordingsScreen(),
       PlaceholderScreen(label: 'Profile'), // Replace with ProfileScreen() when you create it
     ];
   }

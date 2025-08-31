@@ -1,34 +1,58 @@
-import 'package:flutter/material.dart';
+// // recording_card.dart
+// import 'package:flutter/material.dart';
+// import 'package:audioplayers/audioplayers.dart';
+// import 'package:intl/intl.dart';
+// import 'recording_model.dart';
 
-class RecordingCard extends StatelessWidget {
-  final String contact;
-  final String phone;
-  final String duration;
-  final String date;
-  final VoidCallback onUpload;
+// class RecordingCard extends StatefulWidget {
+//   final RecordingModel recording;
+//   const RecordingCard({super.key, required this.recording});
 
-  const RecordingCard({
-    super.key,
-    required this.contact,
-    required this.phone,
-    required this.duration,
-    required this.date,
-    required this.onUpload,
-  });
+//   @override
+//   State<RecordingCard> createState() => _RecordingCardState();
+// }
 
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-      child: ListTile(
-        leading: const Icon(Icons.mic),
-        title: Text('$contact ($phone)'),
-        subtitle: Text('$date • $duration'),
-        trailing: IconButton(
-          icon: const Icon(Icons.cloud_upload),
-          onPressed: onUpload,
-        ),
-      ),
-    );
-  }
-}
+// class _RecordingCardState extends State<RecordingCard> {
+//   final AudioPlayer _player = AudioPlayer();
+//   bool _isPlaying = false;
+
+//   @override
+//   void dispose() {
+//     _player.dispose();
+//     super.dispose();
+//   }
+
+//   Future<void> _playPause() async {
+//     if (_isPlaying) {
+//       await _player.pause();
+//       setState(() => _isPlaying = false);
+//     } else {
+//       await _player.play(DeviceFileSource(widget.recording.filePath));
+//       setState(() => _isPlaying = true);
+//       _player.onPlayerComplete.listen((_) {
+//         if (mounted) setState(() => _isPlaying = false);
+//       });
+//     }
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     final rec = widget.recording;
+//     final formattedDate = DateFormat('yyyy-MM-dd HH:mm').format(rec.dateTime);
+//     final formattedDuration =
+//         '${rec.duration.inMinutes}:${(rec.duration.inSeconds % 60).toString().padLeft(2, '0')}';
+
+//     return Card(
+//       margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+//       child: ListTile(
+//         leading: Icon(_isPlaying ? Icons.pause_circle : Icons.play_circle, color: Colors.blue, size: 36),
+//         title: Text(rec.contact),
+//         subtitle: Text('$formattedDate • $formattedDuration'),
+//         trailing: IconButton(
+//           icon: Icon(_isPlaying ? Icons.stop : Icons.play_arrow),
+//           onPressed: _playPause,
+//         ),
+//       ),
+//     );
+//   }
+// }
