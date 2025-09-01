@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:voicecrm/modules/recordings/recordings_page.dart';
 import 'package:voicecrm/presentation/screens/contacts_screen.dart';
 
 import '../../modules/contacts/contacts_screen.dart';
@@ -15,7 +16,9 @@ class PageService {
       // DialerScreen(),
       // CallScreen(contactName: 'Alice', phone: '+91 98765 43210'), // Replace with dynamic data when wiring up state
       // RecordingsScreen(),
-      PlaceholderScreen(label: 'Profile'), // Replace with ProfileScreen() when you create it
+      // PlaceholderScreen(label: 'Profile'), // Replace with ProfileScreen() when you create it
+      RecordingsPage()
+
     ];
   }
 }

@@ -54,7 +54,7 @@ class CustomBottomNav extends StatelessWidget {
         _buildNavItem(
           icon: Icons.person,
           index: 2,
-          label: 'Profile',
+          label: 'Recordings',
         ),
       ],
     );

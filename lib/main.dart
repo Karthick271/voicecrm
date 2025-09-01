@@ -3,9 +3,13 @@ import 'package:flutter_riverpod/flutter_riverpod.dart'; // <-- Import Riverpod!
 import 'package:go_router/go_router.dart';
 import 'core/routes/app_router.dart';
 import 'core/theme/app_theme.dart';
+import 'modules/recordings/call_manager.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  // ✅ Start call listener background service once
+  CallManager();  
   runApp(const ProviderScope(child: MyApp())); // <-- Wrap your app here!
 }
 
